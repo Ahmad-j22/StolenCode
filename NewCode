@@ -1,5 +1,4 @@
-
-public class Student {
+public class Student { // this class assign the data members
 	 private String id;
 	    private String name;
 	    private int age;
@@ -11,10 +10,7 @@ public class Student {
 	        this.age = age;
 	        this.grade = grade;
 	    }
-
-	    // Getters and setters
-
-	    public String getId() {
+	    	    public String getId() {
 	        return id;
 	    }
 
@@ -41,7 +37,7 @@ public class Student {
 	    public void setGrade(double grade) {
 	        this.grade = grade;
 	    }
-	    // toString method to display student details
+	    // a method to display student details as a String
 	    @Override
 	    public String toString() {
 	        return "Student ID: " + id + ", Name: " + name + ", Age: " + age + ", Grade: " + grade;
@@ -50,23 +46,31 @@ public class Student {
 }
 
 
-
-
-
-
+//////
+*
+*
+*
+*
+*
+*
+*
+*
+*
+/////
 import java.util.ArrayList;
-
+/// this class manage the student data
 public class StudentManagement {
 	 private static ArrayList<Student> studentList = new ArrayList<>();
 	    private static int totalStudents = 0;
 
-	    // Methods for adding, updating, and viewing students
+	    // Method for adding Students
 
 	    public static void addStudent(Student student) {
 	        studentList.add(student);
 	        totalStudents++;
 	        System.out.println("Student added successfully.");
 	    }
+	    // Method to update student data
 	    public static void updateStudent(String studentId, String newName, int newAge, double newGrade) {
 	        for (Student student : studentList) {
 	            if (student.getId().equals(studentId)) {
@@ -79,6 +83,7 @@ public class StudentManagement {
 	        }
 	        System.out.println("Student ID not found.");
 	    }
+	    // a method to view student data
 	    public static void viewStudentDetails(String studentId) {
 	        for (Student student : studentList) {
 	            if (student.getId().equals(studentId)) {
@@ -96,9 +101,24 @@ public class StudentManagement {
 }
 
 
+
+///
+
+*
+*
+*
+
+*
+*
+*
+*
+*
+///
+
 import java.util.Scanner;
+//////this class allows the user to interact with the student data
 public class AdminInterface {
-	public static void main(String[] args) {
+	public static void main(String[] args) { 
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -162,3 +182,5 @@ public class AdminInterface {
 	        StudentManagement.viewStudentDetails(id);
 	    }
 }
+
+
