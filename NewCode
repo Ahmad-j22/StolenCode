@@ -15,23 +15,20 @@ public class Student { // this class assign the data members
 	    }
 
 	    public String getName() {
-	        return name;
-	    }
-
-	    public void setName(String name) {
+				    return name;
+				}
+		public int getAge() {
+				    return age;
+				}
+		public double getGrade() {
+		    return grade;
+		}
+		public void setName(String name) {
 	        this.name = name;
-	    }
-
-	    public int getAge() {
-	        return age;
 	    }
 
 	    public void setAge(int age) {
 	        this.age = age;
-	    }
-
-	    public double getGrade() {
-	        return grade;
 	    }
 
 	    public void setGrade(double grade) {
@@ -46,17 +43,23 @@ public class Student { // this class assign the data members
 }
 
 
-//////
-*
-*
-*
-*
-*
-*
-*
-*
-*
-/////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import java.util.ArrayList;
 /// this class manage the student data
 public class StudentManagement {
@@ -68,22 +71,24 @@ public class StudentManagement {
 	    public static void addStudent(Student student) {
 	        studentList.add(student);
 	        totalStudents++;
-	        System.out.println("Student added successfully.");
+	        System.out.println("Student has been added successfully.");
 	    }
 	    // Method to update student data
+	    
 	    public static void updateStudent(String studentId, String newName, int newAge, double newGrade) {
 	        for (Student student : studentList) {
 	            if (student.getId().equals(studentId)) {
 	                student.setName(newName);
 	                student.setAge(newAge);
 	                student.setGrade(newGrade);
-	                System.out.println("Student information updated successfully.");
+	                System.out.println("Student info has been updated successfully.");
 	                return;
 	            }
 	        }
-	        System.out.println("Student ID not found.");
+	        System.out.println("ID not found.");
 	    }
 	    // a method to view student data
+	    
 	    public static void viewStudentDetails(String studentId) {
 	        for (Student student : studentList) {
 	            if (student.getId().equals(studentId)) {
@@ -91,7 +96,7 @@ public class StudentManagement {
 	                return;
 	            }
 	        }
-	        System.out.println("Student ID not found.");
+	        System.out.println("ID not found.");
 	    }
 
 	    public static int getTotalStudents() {
@@ -102,18 +107,10 @@ public class StudentManagement {
 
 
 
-///
 
-*
-*
-*
 
-*
-*
-*
-*
-*
-///
+
+
 
 import java.util.Scanner;
 //////this class allows the user to interact with the student data
@@ -127,7 +124,6 @@ public class AdminInterface {
             System.out.println("2. Update student information");
             System.out.println("3. View student details");
             System.out.println("4. Exit");
-
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
 
@@ -142,7 +138,7 @@ public class AdminInterface {
                     viewStudentDetails(scanner);
                     break;
                 case 4:
-                    System.out.println("Exiting program. Goodbye!");
+                    System.out.println("Closing program.");
                     System.exit(0);
                 default:
                     System.out.println("Invalid choice. Please try again.");
@@ -154,7 +150,7 @@ public class AdminInterface {
 	        String id = scanner.next();
 	        System.out.print("Enter student name: ");
 	        String name = scanner.next();
-	        System.out.print("Enter student age: ");
+	        System.out.print("Enter student1 age: ");
 	        int age = scanner.nextInt();
 	        System.out.print("Enter student grade: ");
 	        double grade = scanner.nextDouble();
@@ -182,5 +178,3 @@ public class AdminInterface {
 	        StudentManagement.viewStudentDetails(id);
 	    }
 }
-
-
